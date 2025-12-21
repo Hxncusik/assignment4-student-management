@@ -3,7 +3,7 @@ package kz.yerkebulan;
 public class Course {
     private String courseName;
     private String instructor;
-    private Student[] students;
+    private final Student[] students;
 
     public Course(String courseName, String instructor, int size) {
         this.courseName = courseName;
@@ -21,6 +21,14 @@ public class Course {
 
     public Student[] getStudents() {
         return students;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
     }
 
     public void addStudent(Student student, int index) {

@@ -1,31 +1,35 @@
 package kz.yerkebulan;
 
+import java.util.logging.Logger;
+
 public class Main {
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
         Student yerkebulan = new Student("Yerkebulan", 0, "SE");
         yerkebulan.updateGPA(2.67);
         yerkebulan.setCredits(10);
-        System.out.println(yerkebulan);
+        LOGGER.info(yerkebulan.toString());
 
         Student yerbol = new Student("Yerbol", 1, "SE");
         yerbol.updateGPA(3.33);
         yerbol.setCredits(5);
-        System.out.println(yerbol);
+        LOGGER.info(yerbol.toString());
 
         Student nikita = new Student("Nikita", 2, "SE");
         nikita.updateGPA(3.0);
         nikita.setCredits(2);
-        System.out.println(nikita);
+        LOGGER.info(nikita.toString());
 
         Student akmaral = new Student("Akmaral", 3, "SE");
         akmaral.updateGPA(3.67);
         akmaral.setCredits(2);
-        System.out.println(akmaral);
+        LOGGER.info(akmaral.toString());
 
         Student sabyr = new Student("Sabyr", 4, "SE");
         sabyr.updateGPA(4.0);
         sabyr.setCredits(0);
-        System.out.println(sabyr);
+        LOGGER.info(sabyr.toString());
 
         Course course = new Course("Object-Oriented Programming", "Aidana Aidynkyzy", 5);
         course.addStudent(yerkebulan, 0);
@@ -33,14 +37,14 @@ public class Main {
         course.addStudent(nikita, 2);
         course.addStudent(akmaral, 3);
         course.addStudent(sabyr, 4);
-        System.out.println(course);
+        LOGGER.info(course.toString());
 
-        System.out.println("Course Average GPA: " + course.courseAverageGPA());
-        System.out.println("Highest Credit Student: " + course.highestCreditStudent());
+        LOGGER.info("Course Average GPA: " + course.courseAverageGPA());
+        LOGGER.info("Highest Credit Student: " + course.highestCreditStudent());
 
-        System.out.println("Top Student: " + getTopStudent(course.getStudents()));
-        System.out.println("Honors amount: " + countHonors(course.getStudents()));
-        System.out.println("Total Credits: " + totalCredits(course.getStudents()));
+        LOGGER.info("Top Student: " + getTopStudent(course.getStudents()));
+        LOGGER.info("Honors amount: " + countHonors(course.getStudents()));
+        LOGGER.info("Total Credits: " + totalCredits(course.getStudents()));
     }
 
     public static Student getTopStudent(Student[] students) {

@@ -2,7 +2,7 @@ package kz.yerkebulan;
 
 public class Student {
     private String name;
-    private int id;
+    private final int id;
     private String major;
     private double gpa;
     private int credits;
@@ -37,10 +37,6 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setMajor(String major) {
